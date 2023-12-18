@@ -1,8 +1,8 @@
-import { SECRET_SUPABASE_URL, SECRET_SUPABASE_ANON_KEY } from '$env/static/private';
+import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY } from '$env/static/public';
 import { createServerClient } from '@supabase/ssr';
 
 export const handle = async ({ event, resolve }) => {
-	event.locals.supabase = createServerClient(SECRET_SUPABASE_URL, SECRET_SUPABASE_ANON_KEY, {
+	event.locals.supabase = createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
 		cookies: {
 			get: (key) => event.cookies.get(key),
 			set: (key, value, options) => {
