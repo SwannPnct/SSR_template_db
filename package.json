@@ -46,5 +46,11 @@
 		"flowbite-svelte": "^0.44.20",
 		"npm-check": "^6.0.1",
 		"tailwind-merge": "^2.1.0"
-	}
+	},
+	"overrides": {
+        "vite": {
+          "rollup": "npm:@rollup/wasm-node"
+        }
+      }
+
 }
